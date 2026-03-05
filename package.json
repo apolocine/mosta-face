@@ -1,6 +1,6 @@
 {
   "name": "@mostajs/face",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Reusable face recognition module — detection, descriptor extraction, 1:N matching",
   "author": "Dr Hamid MADANI <drmdh@msn.com>",
   "license": "MIT",
@@ -24,6 +24,21 @@
       "import": "./dist/hooks/useFaceDetection.js",
       "require": "./dist/hooks/useFaceDetection.js",
       "default": "./dist/hooks/useFaceDetection.js"
+    },
+    "./lib/*": {
+      "types": "./dist/lib/*.d.ts",
+      "import": "./dist/lib/*.js",
+      "default": "./dist/lib/*.js"
+    },
+    "./api/*": {
+      "types": "./dist/api/*.d.ts",
+      "import": "./dist/api/*.js",
+      "default": "./dist/api/*.js"
+    },
+    "./types": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/types/index.js",
+      "default": "./dist/types/index.js"
     }
   },
   "files": ["dist", "LICENSE", "README.md"],
