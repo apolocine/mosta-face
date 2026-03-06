@@ -22,7 +22,8 @@ export { createDetectHandler } from './api/detect.route'
 export { default as FaceDetector } from './components/FaceDetector'
 export type { FaceDetectorProps } from './components/FaceDetector'
 
-// Types
-export type { MostaFaceConfig, FaceDetectionResult, FaceMatchResult, FaceDescriptor } from './types'
+// Types & settings defaults
+export type { MostaFaceConfig, FaceDetectionResult, FaceMatchResult, FaceDescriptor, FaceSettings } from './types'
+export { DEFAULT_FACE_SETTINGS } from './types'
 export type { FaceCandidate, RecognizeHandlerConfig } from './api/recognize.route'
 export type { DetectHandlerConfig } from './api/detect.route'

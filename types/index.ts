@@ -26,3 +26,22 @@ export interface FaceMatchResult<T> {
 }
 
 export type FaceDescriptor = Float32Array | number[]
+
+// ── Face settings (defaults for consuming apps) ──────────────────
+export interface FaceSettings {
+  /** Enable face detection/recognition (default: true) */
+  faceRecognitionEnabled: boolean
+  /** Match distance threshold — lower = stricter (default: 0.6) */
+  faceRecognitionThreshold: number
+  /** Require face detected before photo capture (default: true) */
+  faceRequireForCapture: boolean
+  /** Auto-verify face after scan (default: false) */
+  faceAutoVerify: boolean
+}
+
+export const DEFAULT_FACE_SETTINGS: FaceSettings = {
+  faceRecognitionEnabled: true,
+  faceRecognitionThreshold: 0.6,
+  faceRequireForCapture: true,
+  faceAutoVerify: false,
+}
