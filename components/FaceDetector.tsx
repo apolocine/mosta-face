@@ -99,15 +99,18 @@ export default function FaceDetector({
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { width: 320, height: 240, facingMode: 'user' },
       })
-      if (videoRef.current) {
-        videoRef.current.srcObject = stream
-        videoRef.current.play()
-        setStreaming(true)
+      // If component unmounted while awaiting getUserMedia, stop tracks immediately
+      if (!videoRef.current) {
+        stream.getTracks().forEach((track) => track.stop())
+        return
+      }
+      videoRef.current.srcObject = stream
+      await videoRef.current.play().catch(() => {})
+      setStreaming(true)
 
-        if (enabled && modelsReady) {
-          videoRef.current.onloadeddata = () => {
-            animFrameRef.current = requestAnimationFrame(detectLoop)
-          }
+      if (enabled && modelsReady) {
+        videoRef.current.onloadeddata = () => {
+          animFrameRef.current = requestAnimationFrame(detectLoop)
         }
       }
     } catch {
@@ -126,13 +129,20 @@ export default function FaceDetector({
     setFaceDetected(false)
   }, [])
 
-  // Cleanup on unmount
+  // Cleanup on unmount — stop all tracks and detach stream
   useEffect(() => {
     return () => {
       cancelAnimationFrame(animFrameRef.current)
-      if (videoRef.current?.srcObject) {
-        const tracks = (videoRef.current.srcObject as MediaStream).getTracks()
-        tracks.forEach((track) => track.stop())
+      const video = videoRef.current
+      if (video) {
+        video.pause()
+        const stream = video.srcObject as MediaStream | null
+        if (stream) {
+          stream.getTracks().forEach((track) => track.stop())
+        }
+        video.srcObject = null
+        video.removeAttribute('src')
+        video.load()
       }
     }
   }, [])
