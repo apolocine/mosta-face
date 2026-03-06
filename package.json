@@ -1,6 +1,6 @@
 {
   "name": "@mostajs/face",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Reusable face recognition module — detection, descriptor extraction, 1:N matching",
   "author": "Dr Hamid MADANI <drmdh@msn.com>",
   "license": "MIT",
@@ -25,15 +25,35 @@
       "require": "./dist/hooks/useFaceDetection.js",
       "default": "./dist/hooks/useFaceDetection.js"
     },
-    "./lib/*": {
-      "types": "./dist/lib/*.d.ts",
-      "import": "./dist/lib/*.js",
-      "default": "./dist/lib/*.js"
+    "./components/FaceDetector": {
+      "types": "./dist/components/FaceDetector.d.ts",
+      "import": "./dist/components/FaceDetector.js",
+      "default": "./dist/components/FaceDetector.js"
     },
-    "./api/*": {
-      "types": "./dist/api/*.d.ts",
-      "import": "./dist/api/*.js",
-      "default": "./dist/api/*.js"
+    "./lib/face-api": {
+      "types": "./dist/lib/face-api.d.ts",
+      "import": "./dist/lib/face-api.js",
+      "default": "./dist/lib/face-api.js"
+    },
+    "./lib/face-matcher": {
+      "types": "./dist/lib/face-matcher.d.ts",
+      "import": "./dist/lib/face-matcher.js",
+      "default": "./dist/lib/face-matcher.js"
+    },
+    "./lib/face-utils": {
+      "types": "./dist/lib/face-utils.d.ts",
+      "import": "./dist/lib/face-utils.js",
+      "default": "./dist/lib/face-utils.js"
+    },
+    "./api/recognize.route": {
+      "types": "./dist/api/recognize.route.d.ts",
+      "import": "./dist/api/recognize.route.js",
+      "default": "./dist/api/recognize.route.js"
+    },
+    "./api/detect.route": {
+      "types": "./dist/api/detect.route.d.ts",
+      "import": "./dist/api/detect.route.js",
+      "default": "./dist/api/detect.route.js"
     },
     "./types": {
       "types": "./dist/types/index.d.ts",

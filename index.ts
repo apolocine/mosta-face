@@ -18,6 +18,10 @@ export { useFaceDetection } from './hooks/useFaceDetection'
 export { createRecognizeHandler } from './api/recognize.route'
 export { createDetectHandler } from './api/detect.route'
 
+// Components
+export { default as FaceDetector } from './components/FaceDetector'
+export type { FaceDetectorProps } from './components/FaceDetector'
+
 // Types
 export type { MostaFaceConfig, FaceDetectionResult, FaceMatchResult, FaceDescriptor } from './types'
 export type { FaceCandidate, RecognizeHandlerConfig } from './api/recognize.route'
