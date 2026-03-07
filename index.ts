@@ -22,6 +22,9 @@ export { createDetectHandler } from './api/detect.route'
 export { default as FaceDetector } from './components/FaceDetector'
 export type { FaceDetectorProps } from './components/FaceDetector'
 
+// Menu contribution
+export { faceMenuContribution } from './lib/menu'
+
 // Types & settings defaults
 export type { MostaFaceConfig, FaceDetectionResult, FaceMatchResult, FaceDescriptor, FaceSettings } from './types'
 export { DEFAULT_FACE_SETTINGS } from './types'

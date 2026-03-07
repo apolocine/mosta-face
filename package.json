@@ -61,11 +61,27 @@
       "default": "./dist/types/index.js"
     }
   },
-  "files": ["dist", "LICENSE", "README.md"],
-  "keywords": ["face-recognition", "face-detection", "face-api", "biometrics", "react", "mosta"],
-  "repository": { "type": "git", "url": "https://github.com/apolocine/mosta-face" },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "face-recognition",
+    "face-detection",
+    "face-api",
+    "biometrics",
+    "react",
+    "mosta"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apolocine/mosta-face"
+  },
   "homepage": "https://mostajs.dev/packages/face",
-  "engines": { "node": ">=18.0.0" },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsc",
     "prepublishOnly": "npm run build"
@@ -74,11 +90,18 @@
     "@vladmandic/face-api": "^1.7.0"
   },
   "peerDependencies": {
+    "@mostajs/menu": ">=1.0.2",
     "react": ">=18"
   },
   "devDependencies": {
+    "@mostajs/menu": "^1.0.2",
     "@types/react": "^19.0.0",
     "react": "^19.0.0",
     "typescript": "^5.6.0"
+  },
+  "peerDependenciesMeta": {
+    "@mostajs/menu": {
+      "optional": true
+    }
   }
 }
