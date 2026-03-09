@@ -1,6 +1,6 @@
 {
   "name": "@mostajs/face",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Reusable face recognition module — detection, descriptor extraction, 1:N matching",
   "author": "Dr Hamid MADANI <drmdh@msn.com>",
   "license": "MIT",
@@ -68,6 +68,7 @@
   },
   "files": [
     "dist",
+    "face.wire.json",
     "LICENSE",
     "README.md"
   ],

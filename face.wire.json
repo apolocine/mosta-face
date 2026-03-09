@@ -1,0 +1,11 @@
+{
+  "_doc": "Manifeste de câblage pour @mostajs/face",
+  "package": "@mostajs/face",
+  "version": "1.3.3",
+  "type": "functional",
+
+  "menu": {
+    "name": "faceMenuContribution",
+    "from": "@mostajs/face/lib/menu"
+  }
+}
